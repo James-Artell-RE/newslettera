@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* Add your CSS styles here */
+        .newsletter {
+            width: 700px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            font-family: Arial, sans-serif;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            /* three rows: header, content, footer */
+            overflow-x: hidden;
+            background-color: white;
+        }
+
+        @media (max-width: 600px) {
+            .newsletter {
+                width: 100%;
+
+
+                /* full width of the viewport */
+            }
+
+            .hero {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto;
+
+
+
+            }
+
+            .row {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .logo {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: 10px;
+
+            }
+
+            .image-card {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border-radius: 10px 10px 0px 0px;
+                width: 100%;
+                height: auto;
+
+
+
+            }
+
+            .card {
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                padding: 16px;
+                text-align: center;
+                background-color: #f1f1f1;
+                border-radius: 0px 0px 10px 10px;
+                height: 25%;
+                height: auto;
+            }
+
+            p {
+                font-size: small;
+            }
+
+            .logo {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+
+
+
+
+
+
+
+
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
+        a:visited {
+            text-decoration: none;
+            color: black;
+
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:focus {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:hover,
+        a:active {
+            text-decoration: none;
+            color: black
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+
+        .bdy {
+            margin: 25px auto;
+            width: 100%;
+            height: auto;
+
+            margin: 5px;
+            padding: 15px;
+
+        }
+
+
+
+
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 16px;
+            text-align: center;
+            background-color: #f1f1f1;
+            border-radius: 0px 0px 10px 10px;
+            height: 25%;
+        }
+
+        p {
+            font-size: small;
+        }
+
+
+
+
+
+
+
+        .column {
+
+            float: inline-start;
+            width: 25%;
+            padding: 0 5px;
+            margin: 5px;
+            width: 45%;
+            height: 45%;
+
+        }
+
+        /* .card:hover { 
+        box-shadow: 0px 0px 50px 30px #423d49;
+    }
+    */
+
+        /* .image-card:hover { 
+        box-shadow: 0px 0px 50px 30px #423d49;
+    }
+    */
+
+        .image-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px 10px 0px 0px;
+            width: 100%;
+
+
+
+        }
+
+
+
+
+
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .content h2 {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .content p {
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 10px 0;
+        }
+
+        .section-3 {
+            background-color: darkgray;
+            margin-top: 15px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: row;
+            justify-content: right;
+            margin: 50px;
+
+
+            width: 80%;
+
+            background-color: darkgray;
+            padding: 20px;
+            border-radius: 10px;
+
+        }
+
+        input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=email] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+
+        .footer {
+            background-color: #eee;
+            color: #333;
+            padding: 20px;
+            text-align: center;
+
+        }
+
+        .f {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .welp {
+            font-size: 12px;
+        }
+
+        .footy {
+            width: 100%;
+            margin-top: 10px;
+            height: 100px;
+            background-color: darkgray;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-image: url("https://raw.githubusercontent.com/James-Artell-RE/Events-/main/images/clinton-harbor-g79e403c23_1280.jpg");
+            background-size: cover;
+            position: relative;
+            height: 300px;
+            margin: 20px;
+
+            width: 90%;
+
+        }
+
+        .hero-text {
+            background-color: white;
+            opacity: .5;
+            color: black;
+            font-size: 10vw;
+            font-weight: bold;
+            margin: 0 auto;
+
+            padding: 10px;
+            width: 50%;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="newsletter">
+        <div class="container">
+            <div class="bdy">
+
+                <div class="logo">
+                    <img src="https://raw.githubusercontent.com/James-Artell-RE/Events-/main/images/WR_ONLY_Logo_Color.jpg"
+                        alt="">
+                </div>
+
+
+
+
+
+
+                <div class=" w3-third w3-container w3-margin-bottom ">
+
+                    <img src=" https://raw.githubusercontent.com/James-Artell-RE/Events-/main/images/9H1A8870.jpg"
+                        alt="" style="width:75%; display: block;
+                    margin-left: auto;
+                    margin-right: auto;" class="w3-hover-opacity">
+                    <div class="into">
+
+                        <br>
+
+                        <p class="f">Marybeth Sullivan & James Artell </p>
+                        <p class="f">Sales Associate</p>
+                        <p class="f"><a href="mailto:james.artell@raveis.com">james.artell@raveis.com</a></p>
+                        <p class="f">203-979-8026</p>
+                        <p class="f"><a href="mailto:Marybeth.Sullivan@raveis.com">Marybeth.Sullivan@raveis.com</a></p>
+                        <p class="f">203-984-8025</p>
+
+
+                    </div>
+
+                </div>
+                <br>
+                <br>
+
+                <div class="hero">
+                    <div class="hero-text">
+                        Love where you live... these are just a few reasons to love Fairfield County
+                    </div>
+                </div>
+
+                <!-- Cards  -->
+                <div class="row">
+                    <div class="column">
+                        <a href="https://ridgefieldplayhouse.org/event/ridgefield-responds-presents-hope-for-ukraine/"
+                            target="_blank">
+                            <div class="shadow">
+                                <img src="https://raw.githubusercontent.com/James-Artell-RE/Events-/main/full_A_RISING_FURY_STILL1_16X9.png"
+                                    alt="" class="image-card">
+                                <div class="card">
+
+                                    <h4>A Rising Fury Jan 8th</h4>
+                                    <p class="welp">A Rising Fury” premiered at the Tribeca Film Festival 2022 and
+                                        tracks the
+                                        evolution
+                                        of the conflict in Ukraine. </p>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="column">
+                        <a href="https://www.eventbrite.com/e/pizza-making-class-new-haven-style-dough-to-dish-held-at-next-door-tickets-390609151487?aff=ebdssbdestsearch"
+                            target="_blank">
+                            <img src="https://raw.githubusercontent.com/James-Artell-RE/Events-/main/images/pizza-horizontal.jpg"
+                                alt="" class="image-card" width="100%" height="178px">
+                            <div class="card">
+
+
+                                <h4>Pizza Making Class Jan 9th</h4>
+                                <p class="welp">Pizza Making Class @ Your Home, 1:1, Neighborhood/Family, Corporate Team
+                                    Building &
+                                    Brick/Mortar location in New Haven, CT. </p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="column">
+                        <a href="https://www.eventbrite.com/e/in-person-relax-and-reset-soul-soothing-sound-bath-tickets-502666909257?aff=ebdssbdestsearch"
+                            target="_blank">
+                            <img src="https://raw.githubusercontent.com/James-Artell-RE/Events-/main/images/soundbath.jpg"
+                                alt="" class="image-card" width="100%" height="178px">
+                            <div class="card">
+
+
+                                <h4>Sound Bath Jan 12th</h4>
+                                <p class="welp">Relax, reset, and recharge yourself with a deeply relaxing soul soothing
+                                    Sound Bath! </p>
+                            </div>
+                        </a>
+                    </div>
+
+
+                </div>
+
+                <div class="row">
+                    <div class="column">
+                        <a href="https://happeningnext.com/event/2023-comedy-competition-eid4so12qe02u1"
+                            target="_blank">
+                            <img src="https://raw.githubusercontent.com/James-Artell-RE/Events-/main/images/mic-g38974c815_1280.jpg"
+                                alt="" class="image-card" width="100%" height="178px">
+                            <div class="card">
+
+                                <h4>2023 Comedy Competition Jan 11th</h4>
+                                <p class="welp">This is free for Comics and and guest to come up and try their hands at
+                                    the
+                                    mic </p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="column">
+                        <a href="https://sono1420.com/events/pizza-night-95tl3" target="_blank">
+                            <img src="https://raw.githubusercontent.com/James-Artell-RE/Events-/main/images/pizza-gdd74e1e42_1280.jpg"
+                                alt="" class="image-card">
+                            <div class="card">
+
+
+                                <h4>SONO 1420 Pizza Night Jan 13th</h4>
+                                <p class="welp">Get a signature pizza from Pieology Pizza Truck and a craft cocktail
+                                    drink
+                                    special
+                                    for
+                                    $20. </p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="column">
+                        <a href="https://www.make-modern.com/service-page/winter-weekend-camp-am-1?referral=service_list_widget"
+                            target="_blank">
+                            <img src="https://raw.githubusercontent.com/James-Artell-RE/Events-/main/images/art-g365f27de5_1280.jpg"
+                                alt="" class="image-card" width="100%" height="178px">
+                            <div class="card">
+
+
+                                <h4> WINTER WEEKEND CAMP</h>
+                                    <p class="welp">Spend a day off from school crafting in our cozy studio! </p>
+                            </div>
+                        </a>
+                    </div>
+
+
+                </div>
+
+                <div class="row">
+                    <div class="column">
+                        <a href="https://quickcenter.fairfield.edu/2022-23-season-calendar/opera/met-hd-live-fedora.html"
+                            target="_blank">
+                            <img src="https://raw.githubusercontent.com/James-Artell-RE/Events-/main/images/vienna-g6b4a231ce_1280.jpg"
+                                alt="" class="image-card" width="100%" height="178px">
+                            <div class="card">
+
+                                <h3> The Metropolitan Opera: Jan 14th</h3>
+                                <p class="welp"> Giordano’s exhilarating drama Fedora returns to the Met for the first
+                                    time
+                                    in 25
+                                    years,.</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="column">
+                        <a href="https://www.thenorwalkartspace.org/calendar">
+                            <img src="https://raw.githubusercontent.com/James-Artell-RE/Events-/main/images/brushes-g23a75169a_1280.jpg"
+                                alt="" class="image-card" width="100%" height="178px">
+                            <div class="card">
+
+
+                                <h3>The Norwalk Art Space Jan 15th</h3>
+                                <p class="welp">Artist Talk featuring Korry Fellow Jerri Graham with invited artists Tim
+                                    Holmstrom </p>
+
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="column">
+                        <a href="https://www.thenorwalkartspace.org/calendar" target="_blank">
+                            <img src="https://raw.githubusercontent.com/James-Artell-RE/Events-/main/images/art-g18216c046_1280.jpg"
+                                alt="" class="image-card" width="100%" height="178px">
+                            <div class="card">
+
+
+                                <h3>Sarah King Exhibition Jan 19th</h3>
+                                <p class="welp"> Reception for an art exhibition featuring Korry Fellow Sarah King with
+                                    visiting
+                                    artists
+                                    Judy Glantzman and Maryna Bilak. </p>
+                            </div>
+                        </a>
+                    </div>
+
+
+                </div>
+
+                <div class="row">
+                    <div class="column">
+                        <a href="https://www.eventbrite.com/e/food-wine-tasting-tickets-487394559247?aff=ebdssbdestsearch"
+                            target="_blank">
+                            <img src="https://raw.githubusercontent.com/James-Artell-RE/Events-/main/images/red-wine-ga19204fa8_1280.jpg"
+                                alt="" class="image-card" width="100%" height="178px">
+                            <div class="card">
+
+                                <h3>Food and Whine tasting Jan 20th</h3>
+                                <p class="welp">Attendees will enjoy expertly paired wines with some of the best Italian
+                                    small
+                                    bites </p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="column">
+                        <a href="https://www.eventbrite.com/e/pickleball-social-event-tickets-490683917807"
+                            target="_blank">
+                            <img src="https://raw.githubusercontent.com/James-Artell-RE/Events-/main/images/asphalt-tennis-court-ga2d5907f6_1280.jpg"
+                                alt="" class="image-card" width="100%" height="178px">
+                            <div class="card">
+
+
+                                <h3>Pickleball Social Event Jan 20th</h3>
+                                <p class="welp">Calling new and seasoned players, and spectators, too! </p>
+
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="column">
+                        <a href="https://www.eventbrite.com/e/the-winter-freake-out-feat-funke-your-face-tickets-472710398527?aff=ebdssbdestsearch"
+                            target="_blank">
+                            <img src="https://raw.githubusercontent.com/James-Artell-RE/Events-/main/images/guitar-g5c62fc168_1280.jpg"
+                                alt="" class="image-card" width="100%" height="178px">
+                            <div class="card">
+
+                                <h3>The Winter Freake Out - feat. Funke Your Face Jan 21st</h3>
+                                <p class="welp">The Winter Freake Out. 2 sets of Grateful Dead
+                                    music </p>
+                            </div>
+                        </a>
+                    </div>
+
+
+                </div>
+
+                <div class="row">
+                    <div class="column">
+                        <a href="https://www.eventbrite.com/e/3rd-annual-norwalk-film-festival-tickets-487221060307?aff=ebdssbdestsearch"
+                            target="_blank">
+                            <img src="https://raw.githubusercontent.com/James-Artell-RE/Events-/main/images/movie-theater-g488b90258_1280.jpg"
+                                alt="" class="image-card" width="100%" height="178px">
+                            <div class="card">
+
+                                <h3>3rd Annual Norwalk Film Festival Jan 21st</h3>
+                                <p class="welp">The 3rd Annual Norwalk Film Festival comes to Wall Street </p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="column">
+                        <a href="https://www.darienlibrary.org/event/all-about-winter-sowing" target="_blank">
+                            <img src="https://raw.githubusercontent.com/James-Artell-RE/Events-/main/images/vegetables-g0e61e7382_1280.jpg"
+                                alt="" class="image-card" width="100%" height="178px">
+                            <div class="card">
+
+
+                                <h3>All About Winter Sowing Jan 26th</h3>
+                                <p class="welp"> Alice Ely walks us through the
+                                    process of winter sowing </p>
+
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="column">
+                        <a href="https://www.guggenheim.org/exhibition/nick-cave-forothermore" target="_blank">
+                            <img src="https://raw.githubusercontent.com/James-Artell-RE/Events-/main/images/nick%20cave.jpg"
+                                id="ukrain" alt="" class="image-card" width="100%" height="178px">
+                            <div class="card">
+
+
+                                <h3>Nick Cave: Forothermore Thru April</h3>
+                                <p class="welp">Nick Cave has become internationally celebrated
+                                    for his elaborate installations and textile works </p>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="column">
+                        <a href="https://www.thenorwalkartspace.org/calendar" target="_blank">
+                            <img src="https://raw.githubusercontent.com/James-Artell-RE/Events-/main/images/performance-g04b0642e2_1280.jpg"
+                                alt="" class="image-card" width="100%" height="178px">
+                            <div class="card">
+
+
+                                <h3>
+
+
+
+                                    Jazz Brunch Performance Jan 28th </h3>
+                                <p class="welp">
+
+
+
+                                    Jazz Brunch Performance by Melissa Newman and Tony Lombardozzi </p>
+                            </div>
+                        </a>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+        <div class="footy">
+
+        </div>
+
+
+
+    </div>
+
+
+</body>
+
+</html>
